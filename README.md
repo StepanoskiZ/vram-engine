@@ -2,7 +2,7 @@
 
 ![License](https://img.shields.io/badge/License-Community_Edition-blue.svg)
 ![MCUs](https://img.shields.io/badge/MCUs-ESP32_|_STM32_|_RP2040_|_PIC32-green.svg)
-![Downloads](https://img.shields.io/github/downloads/StepanoskiZ/vram-engine-esp32/total?color=emerald)
+![Downloads](https://img.shields.io/github/downloads/StepanoskiZ/vram-engine/total?color=emerald)
 
 **Break the Microcontroller Memory Wall.**  
 S-OS V-RAM Engine™ is a portable, high-performance, dynamic C++ virtual memory paging system for microcontrollers. Powered by a proprietary **RangeCoder + LZ77** adaptive compression engine, it extends internal SRAM across SPI NOR Flash, SPI FRAM, or SD Card storage.
