@@ -96,7 +96,7 @@ Select the optimal `VirtualMemoryEngine(blockSize, ramLimit, maxBlocks)` configu
 ## 📦 Installation & Setup
 
 ### Arduino IDE
-1. Download the latest release from the [Releases](https://github.com/StepanoskiZ/vram-engine-esp32/releases) page.
+1. Download the latest release from the [Releases](https://github.com/StepanoskiZ/vram-engine/releases) page.
 2. In Arduino IDE, go to `Sketch` -> `Include Library` -> `Add .ZIP Library...`.
 3. Select the downloaded `.zip` file.
 
