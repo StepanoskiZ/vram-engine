@@ -1,4 +1,4 @@
-# ⚡ S-OS V-RAM Engine™ (Community Edition)
+# ⚡ S-OS V-RAM Engine™
 
 ![License](https://img.shields.io/badge/License-Community_Edition-blue.svg)
 ![MCUs](https://img.shields.io/badge/MCUs-ESP32_|_STM32_|_RP2040_|_PIC32-green.svg)
