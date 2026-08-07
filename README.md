@@ -189,7 +189,7 @@ void loop() {
 
 ## 🛡️ License & Commercial Rights
 
-* **Community Edition:** Free for non-commercial open-source projects, education, and evaluation purposes (hard-capped at 512 KB virtual address space).
+* **Community Edition:** Free for non-commercial projects, education, and evaluation purposes (hard-capped at 512 KB virtual address space).
 * **Commercial Pro, Growth & OEM:** Copyright © 2026 **Syntetika Universe** by Zoran Stepanoski. All Rights Reserved.
 
 For inquiries, commercial licensing, custom MCU porting, or Flash wear-leveling engineering:  
