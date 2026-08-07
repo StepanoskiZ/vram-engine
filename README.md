@@ -1,6 +1,6 @@
 # ⚡ S-OS V-RAM Engine™
 
-![License](https://img.shields.io/badge/License-Community_Edition-blue.svg)
+![License](https://img.shields.io/badge/License-Free_|_Commercial-blue.svg)
 ![MCUs](https://img.shields.io/badge/MCUs-ESP32_|_STM32_|_RP2040_|_PIC32-green.svg)
 ![Downloads](https://img.shields.io/github/downloads/StepanoskiZ/vram-engine/total?color=emerald)
 
