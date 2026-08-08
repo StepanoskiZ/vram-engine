@@ -39,9 +39,10 @@ S-OS V-RAM Engine™ is engineered in **pure, standard ANSI C++11/14**, making i
 * **Algorithmic Compression Ratio:** 
   * **43.54x Peak Ratio:** Boundary stress-tested on repeating patterns and sparse matrix datasets.
   * **3x – 8x Real-World Ratio:** Typical for structured vehicle CAN-bus telemetry, sensor logs, and TinyML neural network weights.
-* **Data Integrity:** **100% Perfect (0 Errors)** across 8.38 Million bytes & 1,000 random thrashing block swaps.
-* **Sequential Write Throughput:** Up to **117.86 KB/s** (32KB blocks) / **97.40 KB/s** (16KB blocks).
-* **Sequential Read Throughput:** Up to **86.26 KB/s**.
+* **Data Integrity:** **100% Perfect (0 Errors)** across 8.38 Million bytes & 1,000 random thrashing page fault swaps.
+* **Sequential Write Throughput:** Up to **147.76 KB/s** (32KB blocks) / **97.40 KB/s** (16KB blocks).
+* **Sequential Read Throughput:** Up to **131.03 KB/s** (32KB blocks) / **86.26 KB/s** (16KB blocks).
+* **Page Fault Swap Latency:** **112.14 ms** average (Sub-microsecond < 0.001 ms for RAM cache hits).
 * **RAM Footprint:** Minimal static overhead (~1.9 KB).
 
 ---
@@ -78,14 +79,14 @@ Select the optimal `VirtualMemoryEngine(blockSize, ramLimit, maxBlocks)` configu
 | Profile / Mode | Configuration | Compression Ratio | Write Throughput | Flash File Overhead | Recommended Use Cases |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **📦 Max Density Mode** | `vram(16384, 131072, 32)` | **3x – 8x (Up to 43.5x Peak)** | ~35 – 97 KB/s | Medium | Dataloggers, smart grid meters, dense databases, telemetry. |
-| **⚡ Time-Critical Mode** | `vram(32768, 131072, 16)` | **~3.0x - 6.0x** | **Fast (~117 KB/s+)** | Low | Time-critical robotics (LIDAR buffers, autonomous navigation), real-time AI, framebuffers. |
+| **⚡ Time-Critical Mode** | `vram(32768, 131072, 16)` | **~3.0x - 6.0x** | **Fast (~147 KB/s+)** | Low | Time-critical robotics (LIDAR buffers, autonomous navigation), real-time AI, framebuffers. |
 | **🐘 Massive Memory Mode** | `vram(65536, 262144, 32)` | **~2.5x - 5.0x** | **Ultra-Fast (150+ KB/s)** | Minimal | 16MB+ Flash chips (`N16`), large neural network weights, high-capacity image/asset caches. |
 | **🪶 Micro-Footprint Mode** | `vram(8192, 65536, 16)` | **~4.0x - 10.0x** | ~20 – 45 KB/s | High | Sub-$1 MCUs, low-heap environments, simple event counters. |
 
 ### 🔍 How Parameters Affect Engine Trade-offs:
 1. **`blockSize` (Page Block Size):**
-   * **Smaller Blocks (16 KB):** Maximizes LZ77 dictionary pattern matching for peak compression ratios (3x–8x real-world, up to 43.5x peak). Uses less active SRAM per page swap.
-   * **Larger Blocks (32 KB / 64 KB):** Maximizes I/O write throughput (117+ KB/s) and creates 2x–4x fewer physical files on Flash storage, drastically reducing filesystem overhead.
+   * **Smaller Blocks (16 KB):** Maximizes **S-OS Context Pattern Analysis™** for peak compression ratios (3x–8x real-world, up to 43.5x peak). Uses less active SRAM per page swap.
+   * **Larger Blocks (32 KB / 64 KB):** Maximizes I/O write throughput (147+ KB/s) and creates 2x–4x fewer physical files on Flash storage, drastically reducing filesystem overhead.
 2. **`ramLimit` (Compressed RAM Cache Pool):**
    * **Higher Cache (256 KB+):** Retains more active pages in SRAM cache $\rightarrow$ Sub-microsecond (< 0.001 ms) random read latency for cached hits & extended Flash write-endurance protection.
 3. **`maxBlocks` (Max Kept Cached Pages):**
